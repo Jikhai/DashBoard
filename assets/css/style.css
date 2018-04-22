@@ -1,0 +1,37 @@
+body {
+	min-height:100vh;
+	display:flex;
+	flex-direction:column;
+    font-family: Sans-serif,serif;
+    margin: 0;
+}
+
+
+
+
+
+
+header {
+    text-align: center;
+    background:  red;
+    color: white;
+    
+}
+
+#status {
+    background: grey;
+    color: white;
+    padding: 0em 1em 0em 1em;
+}
+
+
+
+
+footer {
+    background: red;
+    color: white;
+}
+
+footer ul {
+    list-style-type: none;
+}
