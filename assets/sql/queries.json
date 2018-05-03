@@ -1,0 +1,28 @@
+{
+	"commands": 
+	[
+		{
+		"name" : "Sample text",	
+		"command": "SSELECT *",
+		"rule" : "FROM TABLE WHERE SOMETHING SOMETHING;"
+		},
+		{
+		"name" : "sample",	
+		"command": "EXEC STORED PROCEDURE",
+		"rule" : ""
+		}
+	],
+	"options" : 
+	[
+		{
+		"option" : "None",
+		"detail": "None"
+		},
+		{
+		"option" : "Some Number or something",
+		"detail": "Some Name or number"
+		}
+	]
+
+} 
+

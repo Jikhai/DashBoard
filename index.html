@@ -18,16 +18,33 @@
         <h1>WIP</h1>
     </header>
 
-    <main>
-        <div id="content">
-            <br/>
-			<code id="status">Waiting for Request ...</code>
-			<table id= "resultat">
-					
-			
-			</table>
+  <main>
+		<div id="content">
+			<p>Choix de la requête :  </p>
 			<br/>
-        </div>
+			<!-- the form will be filled with query names from the json file-->
+			<form>
+				<select id="list">
+				<!-- AS IE DOESN'T SUPPORT "PLACEHOLDER" -->
+					<option value=-1>None</option>
+				</select>
+			</form>
+			<br/>
+			<code id="status"></code>
+			<br/>
+			<br/>
+			<div id="wrapper">
+				<div id="table">	
+					<!-- will diplay query results-->
+					<table id= "result">
+					</table>
+					<p id="optninfo"></p>
+				</div>
+				<div id="option">
+				</div>
+			</div>
+		</div>
+		<br/>
     </main>
 
     <footer>
