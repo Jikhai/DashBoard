@@ -9,3 +9,5 @@ Use it at your own risk.
 
 This was realised for my internship, and intended to be used only on a local network, again, this HAS security flaws.
 
+June update : There is now a *basic* login system, as the password aren't crypted anyway.
+You just log in with  credentials that give you access to the database.
