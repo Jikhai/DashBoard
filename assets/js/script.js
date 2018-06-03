@@ -34,7 +34,6 @@ function content()
 
 	
 	function loadQuery(){
-		console.log("loadquery being called !") //used to check if the listener works
 		var query = new XMLHttpRequest();
 		query.open("GET",dir_sql+namefile+format,true);
 		query.onerror = function(){
@@ -69,7 +68,6 @@ function content()
 		
 		var queryOK=true;
 	    var index = list.value//is the index of the request in the JSON file
-		console.log("With the query having the index : "+index);
 	
 		//preping the query 
 		if (index !=-1){ // this condition does the job of the placeholder, missing on IE
@@ -80,17 +78,14 @@ function content()
 				optionCode=(qr.options[index].option);
 				detailCode=(qr.options[index].detail)
 				option=""; // this must ALWAYS be reset upon changing query !
-				console.log(option);
 			}
 			catch(error){
-				console.log(error);
 				queryOK=false;
 			}
 			finally{
 				if (queryOK) {
 					if (optionCode=="None"){ //if valid query AND there is no option....
 						iterate();
-						console.log("pasoption");
 					}
 					else{
 						OptionHandler(); // will deal with options
@@ -113,12 +108,10 @@ function content()
 			var connectOK=true;
 			try{
 				rs.Open(selection+" "+condition+" "+option,connection,3); //3 >  static cursor
-				console.log("there are  :"+rs.RecordCount+" lines"); // will always return the number of rows in our case.
 				rs.MoveFirst 
 				var MaxCol=rs.fields.count //to know how many column there are in the query
 			}
 			catch(error){
-				console.log(error);
 				connectOK=false;
 			}
 			finally{
@@ -152,13 +145,7 @@ function content()
 							data=document.createTextNode(rs.fields(colNum)); //rs .<...> : fields(X) pour la colonne X, partant de 0. // GetString donne la table entière // GetRows(nblignes/début/colonne(s)) permet de choisir une ou des lignes.
 							//data=data.replace(/./g,","); -- did not work as expected
 							field.appendChild(data); //adding data to a field
-							
-															
-							//pending for removal
-							//console.log(field.innerHTML)
-							//console.log(field.innerHTML.length+" longueur");
-							//console.log(checknum.test(field.innerHTML))
-							
+						
 							//checking data format before adding it
 							if (detailCode!="dots") field.innerHTML=field.innerHTML.replace(/\./g,",");
 							if (checknum.test(field.innerHTML)) {
@@ -169,8 +156,6 @@ function content()
 								cut[0] = cut[0].replace(formnum," ");
 								temp = cut.join(",");
 							
-							
-								//console.log(temp);
 								field.innerHTML=temp
 								
 							}
@@ -207,9 +192,7 @@ function content()
 	//add code for handling "details" here
 	function detailHandler(){
 		res.setAttribute("class","")
-		console.log("DetailHandlerBeingCalled");
 		if (detailCode=="color odd col"){
-				console.log("odd colors !");
 				res.setAttribute("class","alt_color");
 		}
 	}
@@ -229,10 +212,6 @@ function content()
 			while (i<iteration){ // needs error checking
 				selection=(qr.commands[index].iteration[i].command); 
 				condition=(qr.commands[index].iteration[i].rule);
-				console.log(qr.commands[index].iteration);
-				console.log(condition);
-				console.log(selection);
-				console.log(i);
 				makedisplayquery();
 				i+=1
 			}	
@@ -242,15 +221,12 @@ function content()
 	function listen(event,item,funct) {
 		if(item.addEventListener) {
 			item.addEventListener(event,funct,false);
-			console.log("ADDEVENT");
 		}
 		else if (item.attachEvent) {
 			item.attachEvent("on"+event, funct);
-			console.log("ATTACHEVENT");
 		}
 		else{
 		//if both can't be done, the website won't work.
-		console.log("NOEVENT");
 		alert("couldn't attach event// UNAVAILABLE LISTENER");
 		}
 	}
@@ -277,14 +253,12 @@ function content()
 		}
 	}
 	function OptionHandler(){
-		console.log("OptionHandlerBeingCalled");
 		OptionDiv.setAttribute("class", "outlined");
 		
 		if (optionCode=="compareTwoYears"){  // contains all the elements needed for that one option
 
 			var today = new Date();
 			var currYear = today.getFullYear();
-			console.log("nous sommes en "+currYear);
 			
 			var date = document.createElement("input");
 			date.type = "number";
@@ -388,7 +362,6 @@ function content()
 						rs.Open("select SYSDATETIME();",connection,3);  
 					}
 					catch(error){
-						console.log(error);
 						connectOK=false;
 						alert("Connection issues !"); //litteraly do nothing
 					}
