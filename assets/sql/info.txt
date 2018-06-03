@@ -1,0 +1,29 @@
+La première partie contient le nom de la requête : le champ « name »
+	La requête est divisée en deux parties : 
+	-	La partie du « SELECT » jusqu’à « FROM » est contenue dans « command »
+	-	La partie du « FROM » jusqu’à la fin est contenue dans « rule »
+	Le dernier champ de nomme « iteration », il permet de faire en sorte que plusieurs requêtes ou procédures s’affichent sur la page en même temps.
+
+ 
+Comme dit précédemment on peut aussi choisir d’exécuter une procédure stockée dans la base de données, dans ce cas-là, command contiendra le nom de la procédure, et rule sera vide 
+  
+
+Il est important de noter que bien qu’on puisse exécuter plusieurs requêtes ou plusieurs procédures d’affilé avec le champ d’itération, il est fortement déconseillé de les mélanger : 
+Les procédures prennent des « arguments », ceux-ci sont gérés par « une option » (cf. deuxième partie du fichier) et cette option est commune à toute la série de requêtes ou procédures ! 
+Cela permet par exemple de ne pas avoir à gérer les options sur 5 procédures semblables.
+
+
+ 
+Seconde partie : 
+ 
+Cette partie contient principalement des informations techniques pour aider l’application à traiter la requête, on y trouve trois champs :
+
+	- Le champ option, qui est uniquement utilisé pour les procédures stockées en base de données, il sert à créer l’encart d’option vu plus haut, et à gérer les variables de la procédure.
+Sa valeur par défaut est « None ».
+
+	- Le champ détail qui contient des informations optionnelles qui traitent d’aspects esthétiques.
+Sa valeur par défaut est « None ».
+	- Et le champ Itération, qui indique le nombre de requêtes supplémentaires qu’il faut chercher à exécuter.
+Sa valeur par défaut est « 0 ».
+
+Chaque groupe correspond à une des requêtes listées plus haut, pour faire simple, le premier groupe dans la partie option correspond à la première requête listée.

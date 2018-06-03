@@ -6,8 +6,6 @@
     <meta charset="utf-8">
 
     <meta name="description" content="DashBoard">
-    <!-- please don't wipe my name off -->
-	<meta name="author" content="Axel Danguin">
     
     <link type="text/css" rel="stylesheet" href="./assets/css/style.css"  media="screen"/>
     <title>DashBoard</title>
@@ -18,28 +16,38 @@
         <h1>WIP</h1>
     </header>
 
-  <main>
+   <main>
 		<div id="content">
-			<p>Choix de la requête :  </p>
-			<br/>
-			<!-- the form will be filled with query names from the json file-->
-			<form>
-				<select id="list">
-				<!-- AS IE DOESN'T SUPPORT "PLACEHOLDER" -->
-					<option value=-1>None</option>
-				</select>
-			</form>
+			<div id="connectionBoard">
+				<p>Identifiant : </p>
+				<input type="text" name="ID" id="ID">
+				<br/>
+				<p>Password : </p>
+				<input type ="password" name="PWD" id="PWD"> <input type="submit" value="Submit" id="LOG IN">
+			</div>
+			<div id="controlBoard"> 
+				<p>Request choice :  </p>
+				<!-- the form will be filled with query names from the json file-->
+				<form>
+					<select id="list">
+					<!-- AS IE DOESN'T SUPPORT "PLACEHOLDER" -->
+						<option value=-1>None</option>
+					</select>
+				</form>
+			</div>
 			<br/>
 			<code id="status"></code>
 			<br/>
 			<br/>
 			<div id="wrapper">
+				
 				<div id="table">	
 					<!-- will diplay query results-->
-					<table id= "result">
+					<table id= "resultat">
 					</table>
 					<p id="optninfo"></p>
 				</div>
+				
 				<div id="option">
 				</div>
 			</div>
@@ -49,7 +57,7 @@
 
     <footer>
         <ul>
-			<li>-</li>
+			<li>Jikhai - 2018</li>
         </ul>
     </footer>
 

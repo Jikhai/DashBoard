@@ -23,12 +23,21 @@ header {
 }
 td {
 	border : 2px solid black;
+	text-align : center;
+    padding-left: 5px;
+    padding-right: 5px;
 }
+
 
 tr:nth-child(odd) {
 background-color: #b3c6e5;
 }
-
+/* #refresh{ */
+	/* float: right; */
+/* } */
+#list{
+	float: left;
+}
 #tableHeader{
 background-color: #926FFF;
 color : white;
@@ -37,10 +46,14 @@ border : 2px solid black;
 th{
 border : 2px solid black;
 }
-
+.spacer {
+	background : white ;
+	border : none ;
+	height : 50px;
+	
+}
 
 #status {
-    background: grey;
     color: white;
     padding: 0em 1em 0em 1em;
 
